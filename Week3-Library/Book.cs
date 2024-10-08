@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,6 +13,17 @@ namespace Week3_Library
         string Author;
         string ISBN;
         int NoOfPages;
+
+        //Creating Constructor for book object
+        public Book(string bookTitle, string bookAuthor, string bookISBN, int bookNoOfPages)
+        {
+            Title = bookTitle;
+            Author = bookAuthor;    
+            ISBN = bookISBN;
+            NoOfPages = bookNoOfPages;
+
+        }
+
 
         void DisplayInfo()
         {
@@ -26,41 +38,15 @@ namespace Week3_Library
 
         static void Main(string[] args)
         {
-            //Create a new instance of book class
-            Book book = new Book();
+            //Create new instance of the book class
+            Book book = new Book("C# For Beginners", "Corey Hughes", "12345678", 200);
+            Book book2 = new Book("Visual Studio 2022", "Microsoft", "123", 70);
 
-            book.Title = "C# For Beginners";
-            book.Author = "CoreyHughes";
-            book.ISBN = "12345678";
-            book.NoOfPages = 200;
 
-            //Creating second object
-            Book book2 = new Book();
-
-            book2.Title = "C# Methods & Classes";
-            book2.Author = "MorganHughes";
-            book2.ISBN = "87654321";
-            book2.NoOfPages = 346;
-
-            //Output book information to console
+            //Output book info to console
             book.DisplayInfo();
             book2.DisplayInfo();
-            
-            //Output the book information
 
-
-         /* Console.WriteLine($"Book Title: {book.Title}");
-            Console.WriteLine($"Book Author: {book.Author}");
-            Console.WriteLine($"Book ISBN: {book.ISBN}");
-
-            //Output the second book information
-
-
-            Console.WriteLine("  ");
-            Console.WriteLine($"Book Title: {book2.Title}");
-            Console.WriteLine($"Book Author: {book2.Author}");
-            Console.WriteLine($"Book ISBN: {book2.ISBN}");
-            */
 
         }
     }
